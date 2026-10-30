@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bambush - Bamboo Themed Cafe and Resturant</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; background-color: #f4f6f0; color: #333; }
+        header { background: linear-gradient(rgba(44,94,59,0.85), rgba(44,94,59,0.85)), url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1200&q=80'); background-size: cover; background-position: center; color: white; text-align: center; padding: 50px 20px; }
+        header h1 { margin: 0; font-size: 3em; letter-spacing: 2px; color: #d4edda; }
+        header p { font-size: 1.3em; margin-top: 10px; font-weight: 300; }
+        .container { max-width: 900px; margin: 20px auto; padding: 20px; background: white; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        .category-title { color: #2c5e3b; border-bottom: 3px solid #2c5e3b; padding-bottom: 5px; margin-top: 30px; font-size: 1.5em; text-transform: uppercase; }
+        .menu-item { display: flex; align-items: center; justify-content: space-between; margin: 15px 0; border-bottom: 1px dashed #ddd; padding-bottom: 12px; }
+        .menu-left { display: flex; align-items: center; gap: 15px; }
+        .menu-left img { width: 60px; height: 60px; object-fit: cover; border-radius: 50%; border: 2px solid #2c5e3b; }
+        .item-name { font-size: 1.1em; font-weight: 600; color: #444; }
+        .price { font-weight: bold; color: #b22222; font-size: 1.2em; }
+        .contact-box { background-color: #2c5e3b; color: white; text-align: center; padding: 25px; margin-top: 30px; border-radius: 8px; }
+        .contact-box h3 { margin: 0 0 10px 0; font-size: 1.5em; }
+        .contact-box p { margin: 5px 0; font-size: 1.1em; }
+        footer { text-align: center; padding: 20px; background-color: #222; color: white; margin-top: 20px; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>BAMBUSH</h1>
+        <p>🌿 Bamboo Themed Café and Resturant 🌿</p>
+        <p>100% Pure Veg | Healthy, Tasty & Fresh</p>
+    </header>
+
+    <div class="container">
+        
+        <!-- INDIAN MAIN COURSE -->
+        <h2 class="category-title">Indian Main Course Veg</h2>
+        <div class="menu-item">
+            <div class="menu-left">
+                <img src="https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=150&q=80" alt="Mix Veg">
+                <span class="item-name">Mix Veg</span>
+            </div>
+            <span class="price">₹160</span>
+        </div>
+        <div class="menu-item">
+            <div class="menu-left">
+                <img src="https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=150&q=80" alt="Paneer Masala">
+                <span class="item-name">Paneer Masala</span>
+            </div>
+            <span class="price">₹210</span>
+        </div>
+        <div class="menu-item">
+            <div class="menu-left">
+                <img src="https://images.unsplash.com/photo-1631452180519-c014fe946bc7?auto=format&fit=crop&w=150&q=80" alt="Shahi Paneer">
+                <span class="item-name">Shahi Paneer</span>
+            </div>
+            <span class="price">₹220</span>
+        </div>
+
+        <!-- CHINESE -->
+        <h2 class="category-title">Chinese</h2>
+        <div class="menu-item">
+            <div class="menu-left">
+                <img src="https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=150&q=80" alt="Veg Noodles">
+                <span class="item-name">Veg. Noodles</span>
+            </div>
+            <span class="price">₹60 / ₹100</span>
+        </div>
+        <div class="menu-item">
+            <div class="menu-left">
+                <img src="https://images.unsplash.com/photo-1603133872878-684f208fb84b?auto=format&fit=crop&w=150&q=80" alt="Manchurian Noodles">
+                <span class="item-name">Manchurian Noodles</span>
+            </div>
+            <span class="price">₹130</span>
+        </div>
+
+        <!-- BURGER -->
+        <h2 class="category-title">Burger</h2>
+        <div class="menu-item">
+            <div class="menu-left">
+                <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=150&q=80" alt="Aloo Tikki Burger">
+                <span class="item-name">Aloo Tikki Burger</span>
+            </div>
+            <span class="price">₹50</span>
+        </div>
+        <div class="menu-item">
+            <div class="menu-left">
+                <img src="https://images.unsplash.com/photo-1586190848861-99aa4a171e90?auto=format&fit=crop&w=150&q=80" alt="Paneer Burger">
+                <span class="item-name">Paneer Burger</span>
+            </div>
+            <span class="price">₹80</span>
+        </div>
+
+        <!-- PIZZA -->
+        <h2 class="category-title">Pizza</h2>
+        <div class="menu-item">
+            <div class="menu-left">
+                <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=150&q=80" alt="Double Margherita Pizza">
+                <span class="item-name">Double Margherita Pizza</span>
+            </div>
+            <span class="price">₹100</span>
+        </div>
+        <div class="menu-item">
+            <div class="menu-left">
+                <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=150&q=80" alt="Peri-Peri Paneer Pizza">
+                <span class="item-name">Peri-Peri Paneer Pizza</span>
+            </div>
+            <span class="price">₹180</span>
+        </div>
+
+        <!-- SHAKES & MOJITO -->
+        <h2 class="category-title">Shakes & Beverages</h2>
+        <div class="menu-item">
+            <div class="menu-left">
+                <img src="https://images.unsplash.com/photo-1572490122747-3968b75cc699?auto=format&fit=crop&w=150&q=80" alt="Chocolate Shake">
+                <span class="item-name">Chocolate Shake</span>
+            </div>
+            <span class="price">₹70</span>
+        </div>
+        <div class="menu-item">
+            <div class="menu-left">
+                <img src="https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=150&q=80" alt="Mint Mojito">
+                <span class="item-name">Mint Mojito</span>
+            </div>
+            <span class="price">₹70</span>
+        </div>
+
+        <!-- CONTACT INFO -->
+        <div class="contact-box">
+            <h3>📍 Contact & Location</h3>
+            <p><strong>Address:</strong> Budha Chowk, Dhobighat, Buxar, Bihar 802101</p>
+            <p><strong>Mobile No:</strong> 📞 9430318363</p>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Bambush Cafe. All Rights Reserved.</p>
+    </footer>
+
+</body>
+          </html>
+  
