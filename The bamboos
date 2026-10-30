@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Bambus - Bamboo Themed Cafe and Resturant</title>
+    <style>
+        :root {
+            --primary: #2c5e3b;
+            --primary-dark: #1e3f28;
+            --accent: #b22222;
+            --bg-color: #f4f6f0;
+        }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; background-color: var(--bg-color); color: #333; scroll-behavior: smooth; }
+        
+        header { background: linear-gradient(rgba(44,94,59,0.85), rgba(44,94,59,0.85)), url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1200&q=80'); background-size: cover; background-position: center; color: white; text-align: center; padding: 70px 20px; }
+        header h1 { margin: 0; font-size: 3.5em; letter-spacing: 2px; color: #d4edda; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
+        header p { font-size: 1.3em; margin-top: 10px; font-weight: 300; }
+        
+        .nav-bar { background-color: var(--primary-dark); padding: 12px; text-align: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
+        .nav-bar a { color: white; text-decoration: none; margin: 0 12px; font-weight: 600; font-size: 1.05em; transition: color 0.2s; }
+        .nav-bar a:hover { color: #d4edda; }
+
+        .container { max-width: 900px; margin: 20px auto; padding: 20px; background: white; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        
+        /* AI Feature Box */
+        .ai-assistant-box { background: linear-gradient(135deg, #e9f5ed, #d4edda); border: 2px solid var(--primary); padding: 25px; border-radius: 12px; margin-bottom: 30px; text-align: center; box-shadow: 0 4px 10px rgba(44,94,59,0.1); }
+        .ai-assistant-box h3 { color: var(--primary); margin-top: 0; font-size: 1.6em; }
+        .ai-buttons { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; margin-top: 15px; }
+        .ai-btn { background-color: var(--primary); color: white; border: none; padding: 10px 18px; border-radius: 20px; cursor: pointer; font-weight: 600; transition: transform 0.2s, background 0.2s; }
+        .ai-btn:hover { background-color: var(--primary-dark); transform: scale(1.05); }
+        #ai-result { margin-top: 15px; font-weight: 600; color: var(--accent); font-size: 1.1em; }
+
+        .category-title { color: var(--primary); border-bottom: 3px solid var(--primary); padding-bottom: 5px; margin-top: 35px; font-size: 1.5em; text-transform: uppercase; }
+        
+        .menu-item { display: flex; align-items: center; justify-content: space-between; border-bottom: 1px dashed #ddd; padding: 12px 0; }
+        .menu-left { display: flex; align-items: center; gap: 15px; }
+        .menu-left img { width: 55px; height: 55px; object-fit: cover; border-radius: 50%; border: 2px solid var(--primary); }
+        .item-name { font-size: 1.1em; font-weight: 600; color: #444; }
+        .price { font-weight: bold; color: var(--accent); font-size: 1.15em; }
+
+        /* Booking Section */
+        .booking-section { background: #e9f5ed; padding: 30px; border-radius: 10px; margin-top: 40px; border: 2px dashed var(--primary); }
+        .booking-section h2 { color: var(--primary); text-align: center; margin-top: 0; }
+        .form-group { margin-bottom: 15px; }
+        .form-group label { display: block; margin-bottom: 5px; font-weight: 600; color: #333; }
+        .form-group input, .form-group select { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px; font-size: 1em; box-sizing: border-box; }
+        .btn-book { background-color: var(--primary); color: white; border: none; width: 100%; padding: 12px; font-size: 1.2em; font-weight: bold; border-radius: 5px; cursor: pointer; transition: background 0.3s; }
+        .btn-book:hover { background-color: var(--primary-dark); }
+
+        .contact-box { background-color: var(--primary); color: white; text-align: center; padding: 25px; margin-top: 30px; border-radius: 8px; }
+        .contact-box h3 { margin: 0 0 10px 0; font-size: 1.5em; }
+        .contact-box p { margin: 5px 0; font-size: 1.1em; }
+        footer { text-align: center; padding: 20px; background-color: #222; color: white; margin-top: 20px; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>THE BAMBUS</h1>
+        <p>🌿 Bamboo Themed Café and Resturant 🌿</p>
+        <p>100% Pure Veg | Healthy, Tasty & Fresh</p>
+    </header>
+
+    <div class="nav-bar">
+        <a href="#ai-recommend">🤖 AI Food Finder</a>
+        <a href="#menu">Menu</a>
+        <a href="#booking">Book Cabin/Table</a>
+        <a href="#contact">Contact</a>
+    </div>
+
+    <div class="container">
+        
+        <!-- AI SMART RECOMMENDATION FEATURE -->
+        <div class="ai-assistant-box" id="ai-recommend">
+            <h3>🤖 AI Smart Dish Recommender</h3>
+            <p>Confused about what to eat? Tap your mood below and let our AI suggest the best dish for you!</p>
+            <div class="ai-buttons">
+                <button class="ai-btn" onclick="recommend('spicy')">🔥 Spicy & Chatpata</button>
+                <button class="ai-btn" onclick="recommend('family')">🍽️ Family Dinner</button>
+                <button class="ai-btn" onclick="recommend('refresh')">🥤 Shakes & Coffee</button>
+                <button class="ai-btn" onclick="recommend('fastfood')">🍕 Fast Food Craving</button>
+            </div>
+            <div id="ai-result">👇 Click a mood above to get a recommendation!</div>
+        </div>
+
+        <!-- INDIAN MAIN COURSE -->
+        <h2 class="category-title" id="menu">Indian Main Course Veg</h2>
+        <div class="menu-item"><div class="menu-left"><img src="https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=150&q=80"><span class="item-name">Mix Veg</span></div><span class="price">₹160</span></div>
+        <div class="menu-item"><div class="menu-left"><img src="https://images.unsplash.com/photo-1565557623262-b51c2513a641?auto=format&fit=crop&w=150&q=80"><span class="item-name">Paneer Do Pyaza</span></div><span class="price">₹220</span></div>
+        <div class="menu-item"><div class="menu-left"><img src="https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=150&q=80"><span class="item-name">Paneer Masala</span></div><span class="price">₹210</span></div>
+        <div class="menu-item"><div class="menu-left"><img src="https://images.unsplash.com/photo-1631452180519-c014fe946bc7?auto=format&fit=crop&w=150&q=80"><span class="item-name">Paneer Kadai</span></div><span class="price">₹240</span></div>
+        <div class="menu-item"><div class="menu-left"><img src="https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?auto=format&fit=crop&w=150&q=80"><span class="item-name">Matar Paneer</span></div><span class="price">₹200</span></div>
+        <div class="menu-item"><div class="menu-left"><img src="https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8?auto=format&fit=crop&w=150&q=80"><span class="item-name">Paneer Butter Masala</span></div><span class="price">₹230</span></div>
+        <div class="menu-item"><div class="menu-left"><img src="https://images.unsplash.com/photo-1599487488170-deddd261015f?auto=format&fit=crop&w=150&q=80"><span class="item-name">Paneer Lababdar</span></div><span class="price">₹240</span></div>
+        <div class="menu-item"><div class="menu-left"><img src="https://images.unsplash.com/photo-1633964913295-ceb43826e7c9?auto=format&fit=crop&w=150&q=80"><span class="item-name">Paneer Handi</span></div><span class="price">₹220</span></div>
+        <div class="menu-item"><div class="menu-left"><img src="https://images.unsplash.com/photo-1645177628172-a94c1f96e6db?auto=format&fit=crop&w=150&q=80"><span class="item-name">Shahi Paneer</span></div><span class="price">₹220</span></div>
+        <div class="menu-item"><div class="menu-left"><img src="https://images.unsplash.com/photo-1543339308-43e59d6b73a6?auto=format&fit=crop&w=150&q=80"><span class="item-name">Mushroom Masala</span></div><span class="price">₹190</span></div>
+
+        <!-- CHINESE -->
+        <h2 class="category-title">Chinese</h2>
+        <div class="menu-item"><div class="menu-left"><img src="https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=150&q=80"><span class="item-name">Veg. Noodles</span></div><span class="price">₹60 / ₹100</span></div>
+        <div class="menu-item"><div class="menu-left"><img src="https://images.unsplash.com/photo-1603133872878-684f208fb84b?auto=format&fit=crop&w=150&q=80"><span class="item-name">Manchurian Noodles</span></div><span class="price">₹130</span></div>
+        <div class="menu-item"><div class="menu-left"><img src="https://images.unsplash.com/photo-1552611052-33e04de081de?auto=format&fit=crop&w=150&q=80"><span class="item-name">Veg. Schezwan Noodles</span></div><span class="price">₹120</span></div>
+        <div class="menu-item"><div class="menu-left"><img src="https://images.unsplash.com/photo-1585032226651-759b368d7246?auto=format&fit=crop&w=150&q=80"><span class="item-name">Hakka Noodles</span></div><span class="price">₹120</span></div>
+
+        <!-- BURGER & PIZZA -->
+        <h2 class="category-title">Burgers & Pizzas</h2>
+        <div class="menu-item"><div class="menu-left"><img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=150&q=80"><span class="item-name">Aloo Tikki Burger</span></div><span class="price">₹50</span></div>
+        <div class="menu-item"><div class="menu-left"><img src="https://images.unsplash.com/photo-1586190848861-99aa4a171e90?auto=format&fit=crop&w=150&q=80"><span class="item-name">Paneer Burger</span></div><span class="price">₹80</span></div>
+        <div class="menu-item"><div class="menu-left"><img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=150&q=80"><span class="item-name">Double Margherita Pizza</span></div><span class="price">₹100</span></div>
+        <div class="menu-item"><div class="menu-left"><img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=150&q=80"><span class="item-name">Peri-Peri Paneer Pizza</span></div><span class="price">₹180</span></div>
+
+        <!-- SHAKES, COFFEE & BEVERAGES -->
+        <h2 class="category-title">Shakes, Coffee & Beverages</h2>
+        <div class="menu-item"><div class="menu-left"><img src="https://images.unsplash.com/photo-1517701550927-30cf4ba1dba5?auto=format&fit=crop&w=150&q=80"><span class="item-name">Cold Coffee</span></div><span class="price">₹80</span></div>
+        <div class="menu-item"><div class="menu-left"><img src="https://images.unsplash.com/photo-1572490122747-3968b75cc699?auto=format&fit=crop&w=150&q=80"><span class="item-name">Chocolate Shake</span></div><span class="price">₹70</span></div>
+        <div class="menu-item"><div class="menu-left"><img src="https://images.unsplash.com/photo-1541658016709-82535e94bc69?auto=format&fit=crop&w=150&q=80"><span class="item-name">Oreo Shake</span></div><span class="price">₹70</span></div>
+        <div class="menu-item"><div class="menu-left"><img src="https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=150&q=80"><span class="item-name">Mint Mojito</span></div><span class="price">₹70</span></div>
+        <div class="menu-item"><div class="menu-left"><img src="https://images.unsplash.com/photo-1536256263959-770b48d82b0a?auto=format&fit=crop&w=150&q=80"><span class="item-name">Blue Ocean Mojito</span></div><span class="price">₹75</span></div>
+
+        <!-- TABLE & CABIN BOOKING FORM -->
+        <div class="booking-section" id="booking">
+            <h2>✨ Book a Table or Personal Cabin</h2>
+            <form onsubmit="event.preventDefault(); alert('🎉 Booking Confirmed! The Bambus team will call you shortly to welcome you.');">
+                <div class="form-group">
+                    <label>Your Name</label>
+                    <input type="text" placeholder="Enter your full name" required>
+                </div>
+                <div class="form-group">
+                    <label>Mobile Number</label>
+                    <input type="tel" placeholder="Enter your phone number" required>
+                </div>
+                <div class="form-group">
+                    <label>Select Seating Experience</label>
+                    <select required>
+                        <option value="">-- Choose Option --</option>
+                        <option value="normal-table">Normal Table (2-4 Persons)</option>
+                        <option value="family-table">Large Family Table (6-8 Persons)</option>
+                        <option value="personal-cabin">🌿 Bamboo Personal Cabin (Special Privacy)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Date & Time</label>
+                    <input type="datetime-local" required>
+                </div>
+                <button type="submit" class="btn-book">Confirm Booking Now</button>
+            </form>
+        </div>
+
+        <!-- CORRECT LOCATION & CONTACT -->
+        <div class="contact-box" id="contact">
+            <h3>📍 Visit Us</h3>
+            <p><strong>Address:</strong> Naya Road, Buxar, Bihar</p>
+            <p><strong>Mobile No:</strong> 📞 9430318363</p>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 The Bambus. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        function recommend(mood) {
+            const resultBox = document.getElementById('ai-result');
+            if(mood === 'spicy') {
+                resultBox.innerHTML = "💡 AI Suggests: Try our **Peri-Peri Paneer Pizza (₹180)** or **Manchurian Noodles (₹130)**!";
+            } else if(mood === 'family') {
+                resultBox.innerHTML = "💡 AI Suggests: Order **Shahi Paneer (₹220)** with **Butter Naan** for the ultimate family feast!";
+            } else if(mood === 'refresh') {
+                resultBox.innerHTML = "💡 AI Suggests: Refresh your mood with our special **Cold Coffee (₹80)** or **Oreo Shake (₹70)**!";
+            } else if(mood === 'fastfood') {
+                resultBox.innerHTML = "💡 AI Suggests: Grab a crispy **Paneer Burger (₹80)** and **Double Margherita Pizza (₹100)**!";
+            }
+        }
+    </script>
+
+</body>
+                    </html>
+                                                          
+  
